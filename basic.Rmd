@@ -1,0 +1,14 @@
+---
+title: "Basic RMD"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# This
+
+Is a very basic .Rmd
+
+Some math 1 + 1 = `r 1 + 1`
