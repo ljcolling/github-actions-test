@@ -16,8 +16,12 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: 
-      image: rocker/verse
+#    container: 
+#      image: rocker/verse
+#      ports: '8787:8787'
+#      env:
+#        DISABLE_AUTH: 'true'
+
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,7 +30,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: docker-compose -up
+      run: docker-compose -f docker-compose.yml up
 
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
