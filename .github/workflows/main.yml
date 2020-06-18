@@ -31,9 +31,13 @@ jobs:
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: docker-compose -f docker-compose.yml up
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    
+    - uses: EndBug/add-and-commit@v4
+      with:
+        add: .
+        author_name: Lincoln Colling
+        author_email: lincoln@colling.net.nz
+        message: "built from github action"   
+        ref: gh-pages
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
